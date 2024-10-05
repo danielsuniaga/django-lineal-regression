@@ -6,8 +6,17 @@ from django.db import connection
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+
+import apis.services.data as case_data
+
 class DataView(APIView):
+
+    data = None
+
+    def __init__(self):
+
+        self.data = case_data.cases_data()
 
     def post(self, request, format=None):
 
-        return Response(True)
+        return Response(self.data.check_data())
