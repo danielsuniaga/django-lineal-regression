@@ -65,7 +65,7 @@ class cases_data:
 
         return True
     
-    def apply_label_encoding(df):
+    def apply_label_encoding(self,df):
 
         le = LabelEncoder()
 
