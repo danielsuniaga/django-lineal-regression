@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 import apis.services.data as case_data
+import apis.controllers.optimalprice as controller_optimal_price
 
 class DataView(APIView):
 
@@ -20,3 +21,17 @@ class DataView(APIView):
     def post(self, request, format=None):
 
         return Response(self.data.check_data())
+    
+class OptimalPriceView(APIView):
+
+    controller = None
+
+    def __init__(self):
+
+        self.controller = controller_optimal_price.controller_optimal_price()
+    
+    def post(self, request):
+
+        data = request.data
+
+        return Response(self.controller.generate_optimal_price(data))
