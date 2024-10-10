@@ -37,3 +37,15 @@ class TestServicesEda(TestCase):
         result = self.services.check_price_min()
 
         print(result)
+
+    def test_check_moss_sold_brand(self):
+
+        result = self.services.check_most_sold_brand()
+
+        print(result)
+
+    def test_check_most_sold_brands(self):
+
+        result = self.services.check_most_sold_brands()
+
+        print(result)
