@@ -1,8 +1,8 @@
 from unittest import TestCase, mock
 
-import apis.controllers.optimalprice as controller_optimal_price
+import apis.controllers.recomendation as controller_recomendation
 
-class TestControllerOptimalPrice(TestCase):
+class TestControllerRecomendation(TestCase):
 
     mock_cursor = None
 
@@ -12,9 +12,9 @@ class TestControllerOptimalPrice(TestCase):
 
         self.mock_cursor = mock.MagicMock()
 
-        self.controller = controller_optimal_price.controller_optimal_price()
+        self.controller = controller_recomendation.controller_recomendation()
 
-    def test_generate_optimal_price(self):
+    def test_get_recomendation(self):
 
         data = {
             "Manufacturer": "Toyota",
@@ -23,9 +23,10 @@ class TestControllerOptimalPrice(TestCase):
             "Mileage": 50000,
             "Cylinders": 4,
             "Gear_box_type": "Automática",
-            "Drive_wheels": "FWD"
+            "Drive_wheels": "FWD",
+            "Proposed_price": 150000
         }
 
-        result = self.controller.generate_optimal_price(data)
+        result = self.controller.get_recommendations()
 
         print(result)
