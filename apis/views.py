@@ -62,5 +62,7 @@ class RecomendationView(APIView):
 
     def post(self, request):
 
-        return Response(self.controller.get_recommendations())
+        data = request.data
+
+        return Response(self.controller.get_recommendations(data))
 

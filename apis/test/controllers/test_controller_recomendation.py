@@ -18,15 +18,15 @@ class TestControllerRecomendation(TestCase):
 
         data = {
             "Manufacturer": "Toyota",
-            "Prod_year": 2018,
+            "Prod_year": 2019,
             "Engine_volume": 2.0,
             "Mileage": 50000,
             "Cylinders": 4,
-            "Gear_box_type": "Automática",
+            "Gear_box_type": "Automatic",
             "Drive_wheels": "FWD",
-            "Proposed_price": 150000
+            "Budget": 20000
         }
 
-        result = self.controller.get_recommendations()
+        result = self.controller.get_recommendations(data)
 
         print(result)
