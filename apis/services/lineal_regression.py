@@ -2,17 +2,19 @@ from decouple import config
 
 import pandas as pd
 
-from sklearn.model_selection import train_test_split
-
 from sklearn.linear_model import LinearRegression
 
 from sklearn.metrics import mean_absolute_error, r2_score
+
+from sklearn.model_selection import train_test_split
 
 import pickle
 
 import os
 
 class cases_lineal_regression:
+
+    name_lineal_regression = None
 
     name_dataset = None
 
@@ -22,9 +24,45 @@ class cases_lineal_regression:
 
         self.init_name_dataset()
 
+        self.init_name_lineal_regression()
+
+    def get_model_predict(self,model,df):
+
+        return model.predict(df)[0]
+
+    def load_model(self):
+
+        model_path = self.get_name_lineal_regression()
+
+        try:
+
+            with open(model_path, 'rb') as model_file:
+
+                model = pickle.load(model_file)
+
+            return model
+        
+        except Exception as e:
+
+            print(f"Error al cargar el modelo: {str(e)}")
+
+            return None
+
+    def init_name_lineal_regression(self):
+
+        self.name_lineal_regression = config("NAME_LINEAL_REGRESSION")
+
+        return True
+    
+    def get_name_lineal_regression(self):
+
+        return self.name_lineal_regression
+
     def init_name_dataset(self):
 
         self.name_dataset = config("DEBUG_NAME_DATASET")
+
+        return True
 
     def get_name_dataset(self):
 
@@ -49,6 +87,26 @@ class cases_lineal_regression:
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
         
         return X_train, X_test, y_train, y_test
+    
+    def save_model(self):
+
+        model_path = self.get_name_lineal_regression()
+        
+        try:
+
+            with open(model_path, 'wb') as model_file:
+
+                pickle.dump(self.model, model_file)
+
+            print(f"Modelo guardado correctamente en: {model_path}")
+
+        except Exception as e:
+
+            print(f"Error al guardar el modelo: {str(e)}")
+
+            return False
+        
+        return True
     
     def train_model(self, X_train, y_train):
 
@@ -79,5 +137,7 @@ class cases_lineal_regression:
         mae, r2 = self.evaluate_model(X_test, y_test)
         
         print(f'MAE: {mae}, R2 Score: {r2}')
+
+        self.save_model()
 
         return True
