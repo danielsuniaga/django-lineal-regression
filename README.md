@@ -16,6 +16,7 @@ The Vehicle Valuation API provides services to estimate optimal vehicle prices u
 - **Data Format**: JSON
 - **Database**: CSV (for storing vehicle data)
 - **Model**: pkl
+- **Containerization**: Docker (used for packaging and deploying the application in a consistent environment)
 
 ## Endpoints
 
