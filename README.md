@@ -45,6 +45,30 @@ Code modularization is essential for maintaining a clean and manageable codebase
 
 - **Views**: In the context of this API, views represent the structured JSON responses that are sent to the client. They format the output data based on the API's requirements, ensuring that clients receive the necessary information in a clear and consistent manner.
 
+## Used Middlewares
+
+The Django application includes the following middlewares to manage various layers of security, authentication, and session handling:
+
+1. **SecurityMiddleware**  
+   Provides various security protections, including defenses against common attacks and controls for HTTP headers related to security.
+
+2. **SessionMiddleware**  
+   Manages session support, allowing the server to store and retrieve information about a user's session state between requests.
+
+3. **CommonMiddleware**  
+   Performs common functions, such as adding trailing slashes to URLs and handling redirect responses.
+
+4. **CsrfViewMiddleware**  
+   Protects against Cross-Site Request Forgery (CSRF) attacks by requiring CSRF tokens in POST requests.
+
+5. **AuthenticationMiddleware**  
+   Associates users with their requests using Django's authentication system.
+
+6. **MessageMiddleware**  
+   Provides a framework for displaying messages to users, whether they are error, warning, or informational messages.
+
+7. **XFrameOptionsMiddleware**  
+   Prevents the website from being embedded in an `<iframe>` from untrusted domains, providing protection against clickjacking attacks.
 
 ## Endpoints
 
