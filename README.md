@@ -3,7 +3,7 @@ Copiar código
 
 ## Project Description
 
-The Vehicle Valuation API provides services to estimate optimal vehicle prices, evaluate prices proposed by sellers, and recommend vehicles based on specifications and budgets. This system is designed to help users make informed decisions when buying or selling vehicles.
+The Vehicle Valuation API provides services to estimate optimal vehicle prices using a machine learning model, evaluate prices proposed by sellers, and recommend vehicles based on specifications and budgets. This system is designed to help users make informed decisions when buying or selling vehicles.
 
 ## Technologies Used
 
@@ -15,6 +15,7 @@ The Vehicle Valuation API provides services to estimate optimal vehicle prices, 
   - NumPy (for numerical operations)
 - **Data Format**: JSON
 - **Database**: CSV (for storing vehicle data)
+- **Model**: pkl
 
 ## Endpoints
 
@@ -90,6 +91,3 @@ To run this API locally, follow these steps:
 
    ```bash
    pip install -r requirements.txt
-
-
-
