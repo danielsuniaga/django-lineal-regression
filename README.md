@@ -12,10 +12,17 @@ The Vehicle Valuation API provides services to estimate optimal vehicle prices u
   - Pandas (for data handling)
   - Scikit-learn (for Machine Learning models)
   - NumPy (for numerical operations)
+  - Django Rest Framework (for building APIs)
+  - TestCase (for unit testing the API and machine learning predictions)
+  - Pickle (for saving and loading the machine learning models)
+  - Decouple (for environment variable management)
+  - Seaborn (for data visualization)
+  - Matplotlib (for plotting graphs and charts)
 - **Data Format**: JSON
 - **Database**: CSV (for storing vehicle data)
-- **Model**: Lineal Regression (pkl)
+- **Machine Learning Model**: Stored in `.pkl` file
 - **Containerization**: Docker (used for packaging and deploying the application in a consistent environment)
+
 
 ## Endpoints
 
