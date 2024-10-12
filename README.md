@@ -48,7 +48,7 @@ The Vehicle Valuation API provides services to estimate optimal vehicle prices u
 ### 2. Price Evaluation
 
 **Method**: POST  
-**Route**: `/evaluate-price 
+**Route**: `/evaluate-price`
 **Description**: Evaluates the price proposed by a seller and suggests a reasonable price based on the analysis of the vehicle's characteristics.
 
 
@@ -68,7 +68,7 @@ The Vehicle Valuation API provides services to estimate optimal vehicle prices u
 ### 3. Purchase Recommendation
 
 **Método**: POST  
-**Ruta**: `/recommendation  
+**Ruta**: `/recommendation` 
 **Descripción**: Given a budget and desired specifications, it suggests the best available vehicle based on the data.
 
 ```json
