@@ -23,6 +23,28 @@ The Vehicle Valuation API provides services to estimate optimal vehicle prices u
 - **Machine Learning Model**: Stored in `.pkl` file
 - **Containerization**: Docker (used for packaging and deploying the application in a consistent environment)
 
+### Patterns Used
+
+1. **Singleton Pattern**:
+   - This pattern is used to ensure that certain classes have a single instance throughout the application's lifetime. This is useful in situations where a single source of truth is needed, such as loading configurations or database connections.
+   - For example, the data services class that handles the loading and processing of vehicle data can be implemented as a Singleton, ensuring that only one instance exists throughout the application lifecycle.
+
+2. **MVC Pattern (Model-View-Controller)**:
+   - The MVC architecture is used to separate the application's logic into three interconnected components:
+     - **Model**: Represents the data structure and business logic. In this case, it handles interactions with the vehicle data.
+     - **View**: Although this project is primarily an API and not a web application with a graphical interface, the View can be interpreted as the JSON responses sent to clients.
+     - **Controller**: Manages the application logic, processing user requests and updating the model or view as necessary. Each API endpoint is represented by a controller that processes input and produces a response.
+
+### Code Modularization
+
+Code modularization is essential for maintaining a clean and manageable codebase. In this project, modularization is achieved through:
+
+- **Controllers**: Each controller is responsible for a specific function of the API, such as price evaluation or vehicle recommendation. This allows for a clear separation of responsibilities and facilitates code scalability and maintenance.
+
+- **Services**: Services encapsulate business logic, allowing controllers to focus on handling requests and responses. For instance, the price evaluation service contains the logic to process input data and apply the corresponding machine learning model, while the controller simply invokes this service and handles the result.
+
+- **Views**: In the context of this API, views represent the structured JSON responses that are sent to the client. They format the output data based on the API's requirements, ensuring that clients receive the necessary information in a clear and consistent manner.
+
 
 ## Endpoints
 
