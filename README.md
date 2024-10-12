@@ -23,7 +23,7 @@ The Vehicle Valuation API provides services to estimate optimal vehicle prices u
 - **Machine Learning Model**: Stored in `.pkl` file
 - **Containerization**: Docker (used for packaging and deploying the application in a consistent environment)
 
-### Patterns Used
+## Patterns Used
 
 1. **Singleton Pattern**:
    - This pattern is used to ensure that certain classes have a single instance throughout the application's lifetime. This is useful in situations where a single source of truth is needed, such as loading configurations or database connections.
@@ -35,7 +35,7 @@ The Vehicle Valuation API provides services to estimate optimal vehicle prices u
      - **View**: Although this project is primarily an API and not a web application with a graphical interface, the View can be interpreted as the JSON responses sent to clients.
      - **Controller**: Manages the application logic, processing user requests and updating the model or view as necessary. Each API endpoint is represented by a controller that processes input and produces a response.
 
-### Code Modularization
+## Code Modularization
 
 Code modularization is essential for maintaining a clean and manageable codebase. In this project, modularization is achieved through:
 
