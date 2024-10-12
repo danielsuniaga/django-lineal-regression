@@ -14,7 +14,7 @@ The Vehicle Valuation API provides services to estimate optimal vehicle prices u
   - NumPy (for numerical operations)
 - **Data Format**: JSON
 - **Database**: CSV (for storing vehicle data)
-- **Model**: pkl
+- **Model**: Lineal Regression (pkl)
 - **Containerization**: Docker (used for packaging and deploying the application in a consistent environment)
 
 ## Endpoints
