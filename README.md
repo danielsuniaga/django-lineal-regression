@@ -1,4 +1,3 @@
-Copiar código
 # Vehicle Valuation API
 
 ## Project Description
