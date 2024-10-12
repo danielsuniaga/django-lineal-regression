@@ -115,6 +115,18 @@ class cases_data:
             self.label_encoder = pickle.load(f)
 
         return True
+    
+    def load_csv(self):
+
+        self.init_name_dataset()
+
+        return pd.read_csv(self.get_name_dataset())
+    
+    def load_csv_debug(self):
+
+        self.init_name_dataset_debug()
+
+        return pd.read_csv(self.get_name_dataset_debug())
 
     def check_data(self):
 
