@@ -12,16 +12,46 @@ class cases_eda:
 
     route_price_with_brand_max = None
 
+    route_price_with_brand_min = None
+
+    route_brand_sold = None
+
     def __init__(self):
 
         self.init_name_dataset()
 
         self.init_route_price_with_data_max()
 
+        self.init_route_price_with_data_min()
+
+        self.init_route_brand_sold()
+
+    def init_route_brand_sold(self):
+
+        self.route_brand_sold = config("ROUTE_EDA_BRAND_SOLD")
+
+        return True
+    
+    def get_route_brand_sold(self):
+
+        return self.route_brand_sold
+
+    def init_route_price_with_data_min(self):
+
+        self.route_price_with_brand_min = config("ROUTE_EDA_PRICE_WITH_BRAND_MIN")
+
+        return True
+    
+    def get_route_price_with_data_min(self):
+
+        return self.route_price_with_brand_min
+
     def init_route_price_with_data_max(self):
 
         self.route_price_with_brand_max = config("ROUTE_EDA_PRICE_WITH_BRAND_MAX")
 
+        return True
+    
     def get_route_price_with_data_max(self):
 
         return self.route_price_with_brand_max
@@ -39,6 +69,22 @@ class cases_eda:
     def get_csv(self):
 
         return pd.read_csv(self.get_name_dataset())
+    
+    def check_most_sold_brand(self):
+
+        df = self.get_csv()
+
+        brand_counts = df['Manufacturer'].value_counts()
+
+        print("Marca con más ventas:")
+
+        print(brand_counts.head(1))
+
+        print("\nTop 10 marcas más vendidas:")
+
+        print(brand_counts.head(10))
+
+        return True
 
     def check_price_max(self):
 
@@ -130,9 +176,32 @@ class cases_eda:
 
         plt.tight_layout()
 
-        plt.savefig(self.get_route_price_with_data())  
+        plt.savefig(self.get_route_price_with_data_min())  
 
         plt.close()  
 
         return True
 
+    def check_most_sold_brands(self):
+
+        df = self.get_csv()
+
+        brand_counts = df['Manufacturer'].value_counts().head(10)  
+
+        plt.figure(figsize=(10, 6))
+
+        sns.barplot(x=brand_counts.values, y=brand_counts.index, palette='viridis')
+
+        plt.title('Top 10 Marcas de Vehículos Más Vendidas', fontsize=16)
+
+        plt.xlabel('Número de Vehículos Vendidos', fontsize=12)
+
+        plt.ylabel('Marca', fontsize=12)
+
+        plt.tight_layout()
+
+        plt.savefig(self.get_route_brand_sold())  
+
+        plt.close()
+
+        return True
