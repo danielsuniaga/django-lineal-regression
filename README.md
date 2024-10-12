@@ -1,27 +1,28 @@
-# API de Valoración de Vehículos
+Copiar código
+# Vehicle Valuation API
 
-## Descripción del Proyecto
+## Project Description
 
-La API de Valoración de Vehículos proporciona servicios para estimar precios óptimos de vehículos, evaluar precios propuestos por los vendedores y recomendar vehículos basados en especificaciones y presupuestos. Este sistema está diseñado para ayudar a los usuarios a tomar decisiones informadas al comprar o vender vehículos.
+The Vehicle Valuation API provides services to estimate optimal vehicle prices, evaluate prices proposed by sellers, and recommend vehicles based on specifications and budgets. This system is designed to help users make informed decisions when buying or selling vehicles.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **Lenguaje de Programación**: Python
-- **Framework**: Flask
-- **Bibliotecas**:
-  - Pandas (para manejo de datos)
-  - Scikit-learn (para modelos de Machine Learning)
-  - NumPy (para operaciones numéricas)
-- **Formato de Datos**: JSON
-- **Base de Datos**: CSV (para el almacenamiento de datos de vehículos)
+- **Programming Language**: Python
+- **Framework**: Django
+- **Libraries**:
+  - Pandas (for data handling)
+  - Scikit-learn (for Machine Learning models)
+  - NumPy (for numerical operations)
+- **Data Format**: JSON
+- **Database**: CSV (for storing vehicle data)
 
 ## Endpoints
 
-### 1. Precio Óptimo
+### 1. Optimal Price
 
-**Método**: POST  
-**Ruta**: `/optimal-price`  
-**Descripción**: Dada una serie de características del vehículo, retorna el precio óptimo estimado.
+**Method**: POST  
+**Route**: `/optimal-price`  
+**Description**: Given a series of vehicle characteristics, it returns the estimated optimal price.
 
 ```json
 {
@@ -36,11 +37,12 @@ La API de Valoración de Vehículos proporciona servicios para estimar precios �
 ```
 
 
-### 2. Evaluación del Precio
+### 2. Price Evaluation
 
-**Método**: POST  
-**Ruta**: `/evaluate-price`  
-**Descripción**: Evalúa el precio propuesto por un vendedor y sugiere un precio razonable basado en el análisis de las características del vehículo.
+**Method**: POST  
+**Route**: `/evaluate-price 
+**Description**: Evaluates the price proposed by a seller and suggests a reasonable price based on the analysis of the vehicle's characteristics.
+
 
 ```json
 {
@@ -55,11 +57,11 @@ La API de Valoración de Vehículos proporciona servicios para estimar precios �
 }
 ```
 
-### 3. Recomendación de Compra
+### 3. Purchase Recommendation
 
 **Método**: POST  
-**Ruta**: `/recommendation`  
-**Descripción**: Dado un presupuesto y especificaciones deseadas, sugiere el mejor vehículo disponible en función de los datos.
+**Ruta**: `/recommendation  
+**Descripción**: Given a budget and desired specifications, it suggests the best available vehicle based on the data.
 
 ```json
 {
@@ -74,12 +76,20 @@ La API de Valoración de Vehículos proporciona servicios para estimar precios �
 
 ```
 
-## Instalación
+## Installation
 
-Para ejecutar esta API localmente, sigue estos pasos:
+To run this API locally, follow these steps:
 
-1. **Clona el repositorio**:
+1. **Clone the repository:**:
 
    ```bash
    git clone <https://github.com/danielsuniaga/django-lineal-regression/>
    cd <directorio-del-repositorio>
+
+2. **Install the required dependencies:**:
+
+   ```bash
+   pip install -r requirements.txt
+
+
+
